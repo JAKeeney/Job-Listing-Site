@@ -20,7 +20,7 @@ CREATE TABLE users
   PRIMARY KEY (id)
 );
 
-
+https://i.gyazo.com/d31534f573747235f11b97f7869ae82c.png
 
 jobs: 
 
@@ -34,3 +34,4 @@ CREATE TABLE jobs
   PRIMARY KEY (id)
 );
 
+https://i.gyazo.com/6a0fe73b6655de6e2df5c12c364e8f99.png

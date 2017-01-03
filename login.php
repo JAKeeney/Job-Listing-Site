@@ -1,8 +1,9 @@
 <?php
     
     if (isset($_POST['username'])) {
-        include 'db.php';
+        include 'private/db.php';
         
+        //NOTE: Password is md5 hashed. Store in database as md5 hash.
         $username = mysqli_real_escape_string($conn, $_POST['username']);
         $password = md5(mysqli_real_escape_string($conn, $_POST['password']));
         
@@ -12,29 +13,23 @@
         if($row = $result->fetch_assoc()) {
             session_start();
             $_SESSION['id'] = session_id();
-            header("Location: admin.php");
+            header("Location: /admin.php");
         } else {
-            echo "Incorrect login details.";
+            echo "<p>Incorrect login details.</p>";
         }
-        
     }
-
 
 ?>
 
-
-
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
     <body>
-        <form method="post" action="login.php">
-	    Username: <input type="text" name="username"/> <br/><br/>
-	    Password: <input type="password" name="password"/> <br/><br/>
-	    <input type="submit" name="submit" value="Log In"/>
-            <button type="submit" formaction="jobs.php">View job list</button>
+        <form method="post" action="/login.php">
+	    <p> Username: <input type="text" name="username"/> </p>
+	    <p> Password: <input type="password" name="password"/> </p>
+            <p>
+                <input type="submit" name="submit" value="Log In"/>
+                <button type="submit" formaction="/jobs.php">View job list</button>
+            </p>
 	</form>
     </body>
 </html>

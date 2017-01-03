@@ -3,13 +3,34 @@
 Practice building a job listing site with PHP ft. JavaScript
 
 Please note that the information in db.php should be edited to work for your database.
-At leas two databases should be used: users and jobs.
+Two tables should be used: users and jobs.
 
-"users" requires a "username" and a "password" column, and the password column should be md5 hashed.
+"users" requires an "id", "username", and "password" column, and the password should be stored as an md5 hash.
 "jobs" requires an "id", "title", "start", "end", and "description" column.
 
-Examples (using PHPMyAdmin):
+Examples:
 
-users: https://i.gyazo.com/e1437b94f59408cf385620474306f4df.png
+users:
 
-jobs: https://i.gyazo.com/afd2506c0c08e4b5ea0daa364ba9b48f.png
+CREATE TABLE users
+(
+  id int NOT NULL AUTO_INCREMENT,
+  username varchar(30),
+  `password` varchar(30),
+  PRIMARY KEY (id)
+);
+
+
+
+jobs: 
+
+CREATE TABLE jobs
+(
+  id int NOT NULL AUTO_INCREMENT,
+  title varchar(255),
+  `start` varchar(255),
+  `end` varchar(255),
+  `description` varchar(1000),
+  PRIMARY KEY (id)
+);
+

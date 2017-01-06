@@ -14,7 +14,7 @@ CREATE TABLE users
 (
   id int NOT NULL AUTO_INCREMENT,
   username varchar(30),
-  `password` varchar(30),
+  `password` varchar(32),
   PRIMARY KEY (id)
 );
 
